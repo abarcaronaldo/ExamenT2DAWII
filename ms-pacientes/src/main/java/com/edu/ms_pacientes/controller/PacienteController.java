@@ -31,9 +31,9 @@ public class PacienteController {
         return ResponseEntity.ok(pacienteService.obtenerTodos());
     }
 
-    @GetMapping("/dni/{dni}")
-    public ResponseEntity<?> obtenerPorDni(@PathVariable String  dni) {
-        return pacienteService.obtenerPorDni(dni)
+    @GetMapping("/{codigo}")
+    public ResponseEntity<?> obtenerPorCodigo(@PathVariable Long codigo) {
+        return pacienteService.buscarPorCodigo(codigo)
                 .map(paciente -> ResponseEntity.ok(paciente))
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }

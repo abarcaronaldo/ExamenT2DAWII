@@ -9,5 +9,5 @@ import java.util.Optional;
 public interface PacienteService {
     Paciente registrarPaciente(PacienteRequest dto);
     List<Paciente> obtenerTodos();
-    Optional<Paciente> obtenerPorDni(String dni);
+    Optional<Paciente> buscarPorCodigo(Long codigo);
 }

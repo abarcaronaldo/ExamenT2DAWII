@@ -34,8 +34,8 @@ public class PacienteServiceImpl implements PacienteService{
     }
 
     @Override
-    public Optional<Paciente> obtenerPorDni(String dni) {
-        return pacienteRepository.findByDni(dni);
+    public Optional<Paciente> buscarPorCodigo(Long codigo) {
+        return pacienteRepository.findById(codigo);
     }
 
 }
